@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import Marquee from "../../components/Marquee.astro";
+// Página en español (ruta "/es/"). Misma composición que la inglesa:
+// el contenido cambia porque Astro.currentLocale aquí es "es".
+---
+
+<Layout>
+	<Header />
+	<main>
+		<Hero />
+		<Marquee />
+	</main>
+</Layout>

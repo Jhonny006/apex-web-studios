@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+/* ==========================================================
+   APEX WEB STUDIOS — Design tokens
+   Tailwind 4 lee este bloque @theme y genera utilidades:
+   --color-accent  →  bg-accent, text-accent, border-accent…
+   --font-headline →  font-headline
+   ========================================================== */
+@theme {
+  /* Colores */
+  /* Ojo: no llamarlo "base" — text-base ya es una utilidad de tamaño en Tailwind */
+  --color-night: #0a0a0a; /* fondo principal */
+  --color-surface: #141414; /* secciones/tarjetas elevadas */
+  --color-line: #262626; /* bordes finos */
+  --color-ink: #f5f5f5; /* texto principal */
+  --color-ink-muted: #8f8f8f; /* texto secundario */
+  --color-accent: #aaff00; /* verde lima eléctrico de marca */
+
+  /* Tipografías */
+  --font-body: "DM Sans", ui-sans-serif, sans-serif;
+  --font-headline: "Chakra Petch", "Arial Narrow", sans-serif; /* titulares: cuadrada/técnica */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Estilos base del documento */
+@layer base {
+  html {
+    scroll-behavior: smooth; /* anclas del nav con desplazamiento suave */
+  }
+
+  body {
+    @apply bg-night text-ink font-body antialiased;
+  }
+
+  /* Seleccionar texto también respira la marca */
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-night);
+  }
+}
+
+/* Scrollbar oscura: la nativa clara rompe la inmersión en fondo negro */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-night);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-muted);
+}

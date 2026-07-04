@@ -1,41 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/global.css";
-// ¡Aquí empieza el código limpio de Apex Web Studios!
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+// Página en inglés (idioma por defecto, ruta "/"). Los componentes
+// detectan el idioma solos vía Astro.currentLocale.
 ---
 
 <Layout>
-	<!-- Contenedor principal con fondo degradado y centrado responsivo -->
-	<main
-		class="min-h-screen bg-gradient-to-br from-slate-900 to-indigo-950 text-white flex flex-col items-center justify-center px-4 select-none"
-	>
-		<!-- Etiqueta de la agencia -->
-		<span
-			class="text-indigo-400 font-semibold tracking-wider uppercase text-xs sm:text-sm mb-3"
-		>
-			Welcome to the future of web dev
-		</span>
-
-		<!-- Título principal con degradado de texto moderno -->
-		<h1
-			class="text-4xl sm:text-6xl font-extrabold tracking-tight text-center bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-indigo-400"
-		>
-			Apex Web Studios
-		</h1>
-
-		<!-- Descripción comercial (Propuesta de valor) -->
-		<p
-			class="mt-4 text-base sm:text-lg text-slate-400 max-w-xl text-center leading-relaxed"
-		>
-			We build high-performance bilingual websites that turn local traffic
-			into high-paying customers in the USA.
-		</p>
-
-		<!-- Botón interactivo de llamada a la acción (CTA) -->
-		<button
-			class="mt-8 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition-all text-white font-medium rounded-xl shadow-lg shadow-indigo-500/20 duration-200"
-		>
-			Get a Free Estimate
-		</button>
+	<Header />
+	<main>
+		<Hero />
+		<Marquee />
 	</main>
 </Layout>

@@ -1,0 +1,30 @@
+---
+import { locales, localeHome, defaultLocale } from "../../i18n";
+
+// El idioma activo se resalta en lima; el resto, gris con hover.
+const current = Astro.currentLocale ?? defaultLocale;
+---
+
+<nav
+	class="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em]"
+	aria-label="Language"
+>
+	{
+		locales.map((loc, i) => (
+			<Fragment>
+				{i > 0 && <span class="text-ink-muted/40">/</span>}
+				<a
+					href={localeHome(loc)}
+					class={
+						loc === current
+							? "text-accent"
+							: "text-ink-muted transition-colors hover:text-ink"
+					}
+					aria-current={loc === current ? "true" : undefined}
+				>
+					{loc.toUpperCase()}
+				</a>
+			</Fragment>
+		))
+	}
+</nav>

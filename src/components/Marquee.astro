@@ -1,0 +1,54 @@
+---
+import { getDict } from "../i18n";
+
+const t = getDict(Astro.currentLocale);
+
+// Bucle infinito: el contenido se renderiza 2 veces y el track se
+// desplaza -50%. La segunda copia rellena el hueco = sin costura.
+const copies = [0, 1];
+---
+
+<div class="marquee overflow-hidden border-b border-line py-3.5">
+	<div class="track flex w-max items-center">
+		{
+			copies.map((copy) => (
+				<div
+					class="flex items-center gap-8 pr-8"
+					aria-hidden={copy === 1 ? "true" : undefined}
+				>
+					{t.marquee.map((item) => (
+						<Fragment>
+							<span class="whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
+								{item}
+							</span>
+							<span class="text-xs text-accent">&#10022;</span>
+						</Fragment>
+					))}
+				</div>
+			))
+		}
+	</div>
+</div>
+
+<style>
+	.track {
+		animation: scroll 28s linear infinite;
+	}
+
+	/* Cortesía: pausa al pasar el cursor, se puede leer con calma */
+	.marquee:hover .track {
+		animation-play-state: paused;
+	}
+
+	@keyframes scroll {
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.track {
+			animation: none;
+		}
+	}
+</style>
