@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+import { getDict } from "../i18n";
+import SectionHeading from "./ui/SectionHeading.astro";
+// La imagen se IMPORTA como un módulo: Astro la optimiza en build
+// (compresión, formato moderno, dimensiones) y rompe la caché por
+// hash. Placeholder generado — sustituir por la foto real del estudio.
+import studioPhoto from "../assets/studio.jpg";
+
+const t = getDict(Astro.currentLocale);
+---
+
+<section id="studio" class="scroll-mt-24 border-b border-line">
+	<div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28" data-reveal>
+		<!-- Título a la izquierda, intro a la derecha (apilados en móvil) -->
+		<div
+			class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between"
+		>
+			<SectionHeading label={t.studio.label} title={t.studio.title} />
+			<p class="max-w-md text-sm leading-relaxed text-ink-muted">
+				{t.studio.intro}
+			</p>
+		</div>
+
+		<!-- figure/figcaption: la pareja semántica correcta para
+		     imagen + pie. El degradado inferior garantiza contraste
+		     del caption sobre cualquier foto. -->
+		<figure class="relative mt-14 border border-line">
+			<Image
+				src={studioPhoto}
+				alt={t.studio.photoAlt}
+				widths={[640, 1024, 1600]}
+				sizes="(max-width: 1280px) 100vw, 1216px"
+				class="h-72 w-full object-cover sm:h-96 lg:h-[28rem]"
+			/>
+			<div
+				class="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/80 via-transparent to-transparent"
+			>
+			</div>
+			<figcaption class="absolute bottom-5 left-5 sm:bottom-7 sm:left-7">
+				<p class="font-headline text-2xl font-bold uppercase sm:text-3xl">
+					{t.studio.location}
+				</p>
+				<p
+					class="mt-1 font-mono text-[11px] uppercase tracking-[0.2em] text-ink-muted"
+				>
+					{t.studio.est}
+				</p>
+			</figcaption>
+		</figure>
+
+		<!-- Equipo: mismo hairline grid que Stats/Services -->
+		<div
+			class="mt-14 grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4"
+		>
+			{
+				t.studio.team.map((member) => (
+					<div class="group bg-night p-6 sm:p-8">
+						<svg
+							class="h-6 w-6 text-ink-muted transition-colors group-hover:text-accent"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+						>
+							<circle cx="12" cy="8" r="4" />
+							<path d="M20 21a8 8 0 1 0-16 0" />
+						</svg>
+						<p class="mt-6 font-headline text-base font-bold uppercase tracking-wide">
+							{member.name}
+						</p>
+						<p class="mt-1.5 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted">
+							{member.role}
+						</p>
+						<p class="mt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-ink-muted/60">
+							{t.studio.sinceLabel} {member.since}
+						</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,22 @@
+---
+// Patrón repetido en todas las secciones: etiqueta mono en lima con
+// guion + título display gigante. Un solo lugar para ajustarlo.
+interface Props {
+	label: string;
+	title: string;
+}
+
+const { label, title } = Astro.props;
+---
+
+<div>
+	<p class="font-mono text-xs uppercase tracking-[0.2em] text-accent">
+		<span class="mr-3 inline-block h-px w-8 bg-accent align-middle"></span>
+		{label}
+	</p>
+	<h2
+		class="mt-4 font-headline text-[clamp(2.2rem,6vw,4.5rem)] font-bold uppercase leading-none"
+	>
+		{title}
+	</h2>
+</div>

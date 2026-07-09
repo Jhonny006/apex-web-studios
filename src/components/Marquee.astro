@@ -3,8 +3,12 @@ import { getDict } from "../i18n";
 
 const t = getDict(Astro.currentLocale);
 
-// Bucle infinito: el contenido se renderiza 2 veces y el track se
-// desplaza -50%. La segunda copia rellena el hueco = sin costura.
+// Bucle infinito: el track se desplaza -50% y reinicia, con 2 copias
+// idénticas para que la segunda rellene el hueco sin costura.
+// CLAVE: una copia debe ser MÁS ANCHA que el viewport, o aparece un
+// vacío al final del recorrido — por eso repetimos la lista 4 veces
+// dentro de cada copia (~3600px, cubre hasta ultrawide).
+const items = Array.from({ length: 4 }, () => t.marquee).flat();
 const copies = [0, 1];
 ---
 
@@ -16,7 +20,7 @@ const copies = [0, 1];
 					class="flex items-center gap-8 pr-8"
 					aria-hidden={copy === 1 ? "true" : undefined}
 				>
-					{t.marquee.map((item) => (
+					{items.map((item) => (
 						<Fragment>
 							<span class="whitespace-nowrap font-mono text-xs uppercase tracking-[0.2em] text-ink-muted">
 								{item}
@@ -32,7 +36,8 @@ const copies = [0, 1];
 
 <style>
 	.track {
-		animation: scroll 28s linear infinite;
+		/* el track mide 4× más que antes: duración ×4 = misma velocidad */
+		animation: scroll 112s linear infinite;
 	}
 
 	/* Cortesía: pausa al pasar el cursor, se puede leer con calma */

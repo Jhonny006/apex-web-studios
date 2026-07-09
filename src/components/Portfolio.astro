@@ -1,0 +1,61 @@
+---
+import { getDict } from "../i18n";
+import SectionHeading from "./ui/SectionHeading.astro";
+
+const t = getDict(Astro.currentLocale);
+---
+
+<!-- scroll-mt-24: el header sticky taparía el título al saltar a #work;
+     esto reserva el margen superior en la navegación por ancla -->
+<section id="work" class="scroll-mt-24 border-b border-line">
+	<div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28" data-reveal>
+		<div class="flex items-end justify-between gap-6">
+			<SectionHeading label={t.portfolio.label} title={t.portfolio.title} />
+			<a
+				href="#contact"
+				class="group hidden whitespace-nowrap pb-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-muted transition-colors hover:text-accent sm:block"
+			>
+				{t.portfolio.allProjects}
+				<span
+					class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+				>
+					&nearr;
+				</span>
+			</a>
+		</div>
+
+		<!-- divide-y pone 1px entre filas; border-y cierra arriba y abajo -->
+		<ul class="mt-14 divide-y divide-line border-y border-line">
+			{
+				t.portfolio.projects.map((project, i) => (
+					<li>
+						<a
+							href="#contact"
+							class="group flex items-center justify-between gap-5 py-6 sm:py-7"
+						>
+							<span class="flex items-baseline gap-5 sm:gap-8">
+								<span class="font-mono text-xs text-ink-muted">
+									{String(i + 1).padStart(2, "0")}
+								</span>
+								<span class="font-headline text-xl font-bold uppercase transition-colors group-hover:text-accent sm:text-3xl">
+									{project.name}
+								</span>
+							</span>
+							<span class="flex items-center gap-5 sm:gap-10">
+								<span class="hidden font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted md:block">
+									{project.category}
+								</span>
+								<span class="font-mono text-[11px] text-ink-muted">
+									{project.year}
+								</span>
+								<span class="text-ink-muted transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
+									&nearr;
+								</span>
+							</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

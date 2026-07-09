@@ -3,6 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Marquee from "../components/Marquee.astro";
+import Stats from "../components/Stats.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Services from "../components/Services.astro";
+import Process from "../components/Process.astro";
+import Studio from "../components/Studio.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 // Página en inglés (idioma por defecto, ruta "/"). Los componentes
 // detectan el idioma solos vía Astro.currentLocale.
 ---
@@ -12,5 +20,13 @@ import Marquee from "../components/Marquee.astro";
 	<main>
 		<Hero />
 		<Marquee />
+		<Stats />
+		<Portfolio />
+		<Services />
+		<Process />
+		<Studio />
+		<CtaBanner />
+		<Contact />
 	</main>
+	<Footer />
 </Layout>

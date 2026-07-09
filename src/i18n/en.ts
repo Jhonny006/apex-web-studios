@@ -12,6 +12,7 @@ export const en: Dictionary = {
 			{ label: "Work", href: "#work" },
 			{ label: "Services", href: "#services" },
 			{ label: "Process", href: "#process" },
+			{ label: "Studio", href: "#studio" },
 			{ label: "Contact", href: "#contact" },
 		],
 		cta: "Start a Project",
@@ -131,6 +132,8 @@ export const en: Dictionary = {
 			"We're a focused team of twelve — designers, engineers, and strategists working from Brooklyn. Small enough to care deeply, large enough to move fast. We take on six new projects per quarter, and we're selective about it.",
 		location: "Brooklyn, NY",
 		est: "Est. 2019",
+		photoAlt: "Apex Web Studios office in Brooklyn, New York",
+		sinceLabel: "Since",
 		team: [
 			{
 				name: "Reece Aldeman",
@@ -157,6 +160,7 @@ export const en: Dictionary = {
 		phone: "+1 (718) 555-0147",
 		address: "74 Wythe Ave, Brooklyn, NY 11249",
 		socials: ["Dribbble", "Twitter", "Behance", "Instagram", "LinkedIn"],
+		infoLabels: { email: "Email", phone: "Phone", address: "Address" },
 		form: {
 			firstName: "First Name",
 			lastName: "Last Name",
@@ -169,6 +173,7 @@ export const en: Dictionary = {
 				"Digital Strategy",
 				"Something else",
 			],
+			selectOne: "Select one",
 			message: "Message",
 			submit: "Send Inquiry",
 		},

@@ -73,6 +73,8 @@ export interface Dictionary {
 		intro: string;
 		location: string;
 		est: string;
+		photoAlt: string;
+		sinceLabel: string;
 		team: TeamMember[];
 	};
 	ctaBand: { title: string; cta: string };
@@ -84,12 +86,14 @@ export interface Dictionary {
 		phone: string;
 		address: string;
 		socials: string[];
+		infoLabels: { email: string; phone: string; address: string };
 		form: {
 			firstName: string;
 			lastName: string;
 			email: string;
 			projectType: string;
 			projectTypes: string[];
+			selectOne: string;
 			message: string;
 			submit: string;
 		};

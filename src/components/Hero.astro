@@ -69,7 +69,12 @@ const t = getDict(Astro.currentLocale);
 				</span>
 			</div>
 
-			<div class="anim flex items-center gap-7" style="--d: 580ms">
+			<!-- flex-wrap: en ES los dos CTAs no caben en fila en móviles de
+			     375px; si desbordan, envuelven con gap vertical decente -->
+			<div
+				class="anim flex flex-wrap items-center gap-x-7 gap-y-4"
+				style="--d: 580ms"
+			>
 				<a
 					href="#work"
 					class="group font-mono text-xs uppercase tracking-[0.18em] text-ink transition-colors hover:text-accent"

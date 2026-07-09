@@ -1,0 +1,37 @@
+---
+import { getDict } from "../i18n";
+import SectionHeading from "./ui/SectionHeading.astro";
+
+const t = getDict(Astro.currentLocale);
+---
+
+<section id="process" class="scroll-mt-24 border-b border-line">
+	<div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28" data-reveal>
+		<SectionHeading label={t.process.label} title={t.process.title} />
+
+		<ol class="mt-14 divide-y divide-line border-y border-line">
+			{
+				t.process.steps.map((step, i) => (
+					<li class="group flex items-start gap-6 py-8 sm:gap-12 sm:py-10">
+						<!-- El número: gris casi invisible que "enciende" en lima
+						     al pasar el cursor por la fila -->
+						<span class="w-14 shrink-0 font-headline text-3xl font-bold text-line transition-colors group-hover:text-accent sm:text-4xl">
+							{String(i + 1).padStart(2, "0")}
+						</span>
+						<div class="flex-1">
+							<h3 class="font-headline text-lg font-bold uppercase tracking-wide transition-colors group-hover:text-accent sm:text-xl">
+								{step.title}
+							</h3>
+							<p class="mt-2 max-w-2xl text-sm leading-relaxed text-ink-muted">
+								{step.description}
+							</p>
+						</div>
+						<span class="hidden self-center text-ink-muted transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent sm:block">
+							&nearr;
+						</span>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>

@@ -136,6 +136,8 @@ export const es: Dictionary = {
 			"Somos un equipo enfocado de doce personas — diseñadores, ingenieros y estrategas trabajando desde Brooklyn. Lo bastante pequeños para cuidar cada detalle, lo bastante grandes para movernos rápido. Aceptamos seis proyectos nuevos por trimestre, y somos selectivos.",
 		location: "Brooklyn, NY",
 		est: "Desde 2019",
+		photoAlt: "Oficina de Apex Web Studios en Brooklyn, Nueva York",
+		sinceLabel: "Desde",
 		team: [
 			{
 				name: "Reece Aldeman",
@@ -162,6 +164,7 @@ export const es: Dictionary = {
 		phone: "+1 (718) 555-0147",
 		address: "74 Wythe Ave, Brooklyn, NY 11249",
 		socials: ["Dribbble", "Twitter", "Behance", "Instagram", "LinkedIn"],
+		infoLabels: { email: "Email", phone: "Teléfono", address: "Dirección" },
 		form: {
 			firstName: "Nombre",
 			lastName: "Apellido",
@@ -174,6 +177,7 @@ export const es: Dictionary = {
 				"Estrategia Digital",
 				"Otra cosa",
 			],
+			selectOne: "Selecciona una opción",
 			message: "Mensaje",
 			submit: "Enviar Consulta",
 		},
