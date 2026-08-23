@@ -1,220 +1,198 @@
 ---
-import { getDict } from "../i18n";
-import LangSwitch from "./ui/LangSwitch.astro";
+import { getDict } from "../i18n"; 
+import LangSwitch from "./ui/LangSwitch.astro"; 
 
-// El diccionario del idioma activo: todos los textos salen de aquí.
-const t = getDict(Astro.currentLocale);
+// Active language dictionary setup:
+const t = getDict(Astro.currentLocale); 
 ---
 
-<!-- sticky siempre. Dos estados: transparente en el tope de la página,
-     oscuro + blur al hacer scroll (el JS alterna las clases). -->
-<header id="site-header" class="sticky top-0 z-50 transition-colors duration-300">
-	<div
-		class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
-	>
-		<a
-			href="/"
-			class="whitespace-nowrap font-bold text-sm uppercase tracking-[0.2em] transition-colors hover:text-accent xl:tracking-[0.25em]"
-		>
-			Apex Web Studios
-		</a>
+<!-- sticky header. States: transparent on top, deep obsidian + blur on scroll controlled via inline script below. --> 
+<header 
+  id="site-header" 
+  class="sticky top-0 z-50 text-white bg-transparent border-b border-transparent transition-all duration-300" 
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 h-20" >
+    
+    <!-- BRANDING LOGO CONTAINER -->
+    <a href="/" class="flex items-center gap-3 group whitespace-nowrap font-bold text-sm uppercase tracking-[0.2em] text-white transition-colors xl:tracking-[0.25em]" aria-label="Apex Web Studios Home">
+      <!-- Minimalist Monogram SVG Icon (Abstract "A" Peak) -->
+      <svg class="w-6 h-6 text-emerald-400 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 filter drop-shadow-[0_0_8px_rgba(52,211,153,0.3)]" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 3L3 21H7L12 11L17 21H21L12 3Z" fill="currentColor" />
+      </svg>
+      
+      <!-- Typographic Wordmark -->
+      <span class="text-sm font-bold uppercase tracking-[0.2em] text-white font-sans">
+        Apex <span class="text-emerald-400 font-light hidden sm:inline transition-colors duration-300 group-hover:text-emerald-300">Web Studios</span>
+      </span>
+    </a>
 
-		<!-- Nav desktop: el español es ~25% más largo que el inglés, así que
-		     el nav completo solo cabe desde lg (1024px). Compacto en lg,
-		     espaciado completo en xl. Antes de lg: hamburguesa. -->
-		<nav
-			class="hidden items-center gap-6 lg:flex xl:gap-8"
-			aria-label="Main navigation"
-		>
-			{
-				t.nav.links.map((link) => (
-					<a
-						href={link.href}
-						class="whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-accent xl:tracking-[0.18em]"
-					>
-						{link.label}
-					</a>
-				))
-			}
-		</nav>
+    <!-- DESKTOP NAVIGATION MENU -->
+    <nav class="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Main navigation" >
+      {
+        t.nav.links.map((link) => (
+          <a 
+            href={link.href} 
+            class="relative group/link py-2 whitespace-nowrap font-mono text-xs uppercase tracking-[0.14em] text-slate-400 hover:text-emerald-400 transition-colors duration-200 xl:tracking-[0.18em]" 
+          >
+            {link.label}
+            <!-- Futuristic line highlight effect on active mouse hover -->
+            <span class="absolute bottom-0 left-0 w-0 h-[2px] bg-emerald-400 transition-all duration-300 group-hover/link:w-full drop-shadow-[0_0_4px_rgba(52,211,153,0.5)]"></span>
+          </a>
+        ))
+      }
+    </nav>
 
-		<div class="hidden items-center gap-5 lg:flex xl:gap-6">
-			<LangSwitch />
-			<a
-				href="#contact"
-				class="whitespace-nowrap bg-accent px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-[0.14em] text-night transition-colors hover:bg-ink xl:px-5 xl:tracking-[0.18em]"
-			>
-				{t.nav.cta}
-			</a>
-		</div>
+    <!-- ACTIONS BLOCK CONTAINER -->
+    <div class="hidden items-center gap-5 lg:flex xl:gap-6">
+      <LangSwitch />
+      <a 
+        href="#contact" 
+        class="whitespace-nowrap bg-emerald-500 px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-gray-950 rounded-full hover:bg-emerald-400 hover:shadow-[0_0_20px_rgba(52,211,153,0.3)] transition-all duration-200 xl:px-6 xl:tracking-[0.18em]" 
+      >
+        {t.nav.cta}
+      </a>
+    </div>
 
-		<!-- Hamburguesa: visible hasta lg -->
-		<button
-			id="menu-open"
-			type="button"
-			class="p-2 text-ink transition-colors hover:text-accent lg:hidden"
-			aria-label="Open menu"
-			aria-expanded="false"
-			aria-controls="mobile-menu"
-		>
-			<svg
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-			>
-				<line x1="3" y1="7" x2="21" y2="7"></line>
-				<line x1="3" y1="12" x2="21" y2="12"></line>
-				<line x1="3" y1="17" x2="21" y2="17"></line>
-			</svg>
-		</button>
-	</div>
+    <!-- HAMBURGER ICON BUTTON BUTTON: visible until lg -->
+    <button 
+      id="menu-open" 
+      type="button" 
+      class="p-2 text-slate-400 transition-colors hover:text-emerald-400 lg:hidden" 
+      aria-label="Open menu" 
+      aria-expanded="false" 
+      aria-controls="mobile-menu" 
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" >
+        <line x1="3" y1="7" x2="21" y2="7"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="17" x2="21" y2="17"></line>
+      </svg>
+    </button>
+  </div>
 
-	<!-- Línea inferior del navbar: invisible en el tope, aparece con el scroll.
-	     El destello (span interior) barre una sola vez en el primer scroll. -->
-	<div
-		id="nav-line"
-		class="relative h-px w-full overflow-hidden bg-line opacity-0 transition-opacity duration-300"
-	>
-		<span
-			id="nav-flash"
-			class="block h-full w-1/3 -translate-x-full bg-gradient-to-r from-transparent via-accent to-transparent"
-		></span>
-	</div>
+  <!-- Bottom animated accent boundary tracker lines -->
+  <div 
+    id="nav-line" 
+    class="relative h-px w-full overflow-hidden bg-slate-900 opacity-0 transition-opacity duration-300" 
+  >
+    <span 
+      id="nav-flash" 
+      class="block h-full w-1/3 -translate-x-full bg-gradient-to-r from-transparent via-emerald-400 to-transparent" 
+    ></span>
+  </div>
 </header>
 
-<!-- Overlay móvil a pantalla completa: h-dvh cubre el viewport real
-     (100vh clásico falla con la barra de URL de los navegadores móviles).
-     Cerrado = deslizado fuera (translate-x-full) e invisible; la
-     visibility entra en la transición para que el slide de salida se vea
-     completo antes de ocultarlo del teclado y los lectores de pantalla. -->
-<div
-	id="mobile-menu"
-	class="invisible fixed inset-0 z-[70] flex h-dvh w-full translate-x-full flex-col overflow-y-auto bg-night px-5 py-4 transition-[transform,visibility] duration-300 ease-out lg:hidden"
+<!-- MOBILE MENU FULL-SCREEN VIEW OVERLAY CONTAINER -->
+<div 
+  id="mobile-menu" 
+  class="invisible fixed inset-0 z-[70] flex h-dvh w-full translate-x-full flex-col overflow-y-auto bg-gray-950 px-5 py-4 transition-[transform,visibility] duration-300 ease-out lg:hidden" 
 >
-	<div class="flex items-center justify-between border-b border-line pb-4">
-		<span class="font-bold text-sm uppercase tracking-[0.25em]">
-			Apex Web Studios
-		</span>
-		<button
-			id="menu-close"
-			type="button"
-			class="p-2 text-ink transition-colors hover:text-accent"
-			aria-label="Close menu"
-		>
-			<svg
-				width="24"
-				height="24"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-			>
-				<line x1="5" y1="5" x2="19" y2="19"></line>
-				<line x1="19" y1="5" x2="5" y2="19"></line>
-			</svg>
-		</button>
-	</div>
-
-	<nav class="mt-12 flex flex-col gap-9" aria-label="Mobile navigation">
-		{
-			t.nav.links.map((link) => (
-				<a
-					href={link.href}
-					class="text-[15px] font-semibold uppercase tracking-[0.22em] text-ink transition-colors hover:text-accent"
-				>
-					{link.label}
-				</a>
-			))
-		}
-	</nav>
-
-	<div class="mt-10">
-		<LangSwitch />
-	</div>
-
-	<a
-		href="#contact"
-		class="mt-12 block bg-accent py-3.5 text-center font-mono text-sm font-bold uppercase tracking-[0.18em] text-night transition-colors active:bg-ink"
-	>
-		{t.nav.cta}
-	</a>
+  <div class="flex items-center justify-between border-b border-slate-900 pb-4 h-20">
+    <div class="flex items-center gap-3">
+      <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 3L3 21H7L12 11L17 21H21L12 3Z" fill="currentColor" />
+      </svg>
+      <span class="font-bold text-sm uppercase tracking-[0.25em] text-white">
+        Apex Web Studios
+      </span>
+    </div>
+    <button 
+      id="menu-close" 
+      type="button" 
+      class="p-2 text-slate-400 transition-colors hover:text-emerald-400" 
+      aria-label="Close menu" 
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" >
+        <line x1="5" y1="5" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="5" y2="19"></line>
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="mt-12 flex flex-col gap-9" aria-label="Mobile navigation">
+    {
+      t.nav.links.map((link) => (
+        <a 
+          href={link.href} 
+          class="text-[15px] font-semibold uppercase tracking-[0.22em] text-slate-300 transition-colors hover:text-emerald-400" 
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  
+  <div class="mt-10 border-t border-slate-900 pt-8">
+    <LangSwitch />
+  </div>
+  
+  <a 
+    href="#contact" 
+    class="mt-12 block bg-emerald-500 py-4 text-center font-mono text-sm font-bold uppercase tracking-[0.18em] text-gray-950 rounded-xl transition-all active:bg-emerald-400" 
+  >
+    {t.nav.cta}
+  </a>
 </div>
 
 <style>
-	/* El destello: se activa añadiendo la clase .flash desde JS.
-	   forwards + una sola pasada = ocurre una vez y no se repite. */
-	#nav-flash.flash {
-		animation: sweep 1.1s ease-out forwards;
-	}
-
-	@keyframes sweep {
-		from {
-			transform: translateX(-100%);
-		}
-		to {
-			/* el span mide 1/3 del ancho: 400% de sí mismo lo saca por la derecha */
-			transform: translateX(400%);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		#nav-flash.flash {
-			animation: none;
-		}
-	}
+  /* sweep animation loop parameters configuration values */
+  #nav-flash.flash {
+    animation: sweep 1.1s ease-out forwards;
+  }
+  @keyframes sweep {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(400%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #nav-flash.flash { animation: none; }
+  }
 </style>
 
 <script>
-	/* ---------- Menú móvil ---------- */
-	const openBtn = document.getElementById("menu-open");
-	const closeBtn = document.getElementById("menu-close");
-	const menu = document.getElementById("mobile-menu");
+  /* ---------- Mobile Overlay Toggle Controllers ---------- */
+  const openBtn = document.getElementById("menu-open");
+  const closeBtn = document.getElementById("menu-close");
+  const menu = document.getElementById("mobile-menu");
 
-	if (openBtn && closeBtn && menu) {
-		const setOpen = (open: boolean) => {
-			menu.classList.toggle("translate-x-full", !open);
-			menu.classList.toggle("invisible", !open);
-			openBtn.setAttribute("aria-expanded", String(open));
-			document.body.classList.toggle("overflow-hidden", open);
-		};
+  if (openBtn && closeBtn && menu) {
+    const setOpen = (open: boolean) => {
+      menu.classList.toggle("translate-x-full", !open);
+      menu.classList.toggle("invisible", !open);
+      openBtn.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("overflow-hidden", open);
+    };
+    openBtn.addEventListener("click", () => setOpen(true));
+    closeBtn.addEventListener("click", () => setOpen(false));
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setOpen(false);
+    });
+  }
 
-		openBtn.addEventListener("click", () => setOpen(true));
-		closeBtn.addEventListener("click", () => setOpen(false));
+  /* ---------- Header Canvas Matrix Transitions ---------- */
+  const header = document.getElementById("site-header");
+  const navLine = document.getElementById("nav-line");
+  const flash = document.getElementById("nav-flash");
+  
+  let armed = window.scrollY === 0;
 
-		menu.querySelectorAll("a").forEach((link) => {
-			link.addEventListener("click", () => setOpen(false));
-		});
+  const onScroll = () => {
+    const scrolled = window.scrollY > 10;
+    
+    // Background execution styling logic: transparent on top, obsidian matrix layer on pass
+    header?.classList.toggle("bg-gray-950/90", scrolled);
+    header?.classList.toggle("backdrop-blur-md", scrolled);
+    header?.classList.toggle("border-slate-900", scrolled);
+    navLine?.classList.toggle("opacity-0", !scrolled);
 
-		document.addEventListener("keydown", (e) => {
-			if (e.key === "Escape") setOpen(false);
-		});
-	}
+    if (armed && scrolled) {
+      armed = false; 
+      flash?.classList.add("flash");
+    }
+  };
 
-	/* ---------- Estados del navbar + destello de la línea ---------- */
-	const header = document.getElementById("site-header");
-	const navLine = document.getElementById("nav-line");
-	const flash = document.getElementById("nav-flash");
-	// El destello solo se "arma" si la página cargó arriba del todo: si el
-	// navegador restaura una posición de scroll previa, no hay destello.
-	let armed = window.scrollY === 0;
-
-	const onScroll = () => {
-		const scrolled = window.scrollY > 10;
-
-		// Estado del fondo: transparente arriba, oscuro + blur al scrollear
-		header?.classList.toggle("bg-night/85", scrolled);
-		header?.classList.toggle("backdrop-blur-md", scrolled);
-		navLine?.classList.toggle("opacity-0", !scrolled);
-
-		if (armed && scrolled) {
-			armed = false; // una única vez por carga de página
-			flash?.classList.add("flash");
-		}
-	};
-
-	onScroll(); // aplica el estado correcto también si la página carga scrolleada
-	window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); 
+  window.addEventListener("scroll", onScroll, { passive: true });
 </script>

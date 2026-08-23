@@ -1,9 +1,8 @@
 ---
-import "../styles/global.css";
+// Ruta: src/layouts/Layout.astro
+import "../styles/global.css"; // <--- Vincula tus tokens oficiales de Tailwind v4
 import { getDict, defaultLocale } from "../i18n";
 
-// Props del layout: cada página puede pasar su propio título y descripción.
-// Los valores por defecto salen del diccionario del idioma activo.
 interface Props {
 	title?: string;
 	description?: string;
@@ -11,11 +10,8 @@ interface Props {
 
 const locale = Astro.currentLocale ?? defaultLocale;
 const t = getDict(locale);
-
 const { title = t.meta.title, description = t.meta.description } = Astro.props;
 
-// hreflang: le dice a Google que estas URLs son la misma página en
-// distintos idiomas. x-default = a quién mandar si no hay match.
 const enUrl = new URL("/", Astro.site);
 const esUrl = new URL("/es/", Astro.site);
 ---
@@ -27,8 +23,7 @@ const esUrl = new URL("/es/", Astro.site);
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<!-- Desactiva la oferta de traducción automática de Chrome: ofrecemos
-		     versión nativa en ambos idiomas, el popup solo estorba. -->
+
 		<meta name="google" content="notranslate" />
 		<link rel="alternate" hreflang="en" href={enUrl} />
 		<link rel="alternate" hreflang="es" href={esUrl} />
@@ -36,7 +31,7 @@ const esUrl = new URL("/es/", Astro.site);
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 
-		<!-- Fuentes: preconnect abre la conexión antes de pedir el CSS -->
+		<!-- Fuentes oficiales de Apex Web Studios corregidas -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -44,27 +39,22 @@ const esUrl = new URL("/es/", Astro.site);
 			rel="stylesheet"
 		/>
 	</head>
-	<body>
+	<body class="bg-night text-ink font-body antialiased">
 		<slot />
 
 		<script>
-			// Marca "hay JS": activa los estilos de ocultación de [data-reveal]
 			document.documentElement.classList.add("js");
-
-			// Revela cada bloque al entrar al viewport, una sola vez
 			const observer = new IntersectionObserver(
 				(entries) => {
 					for (const entry of entries) {
 						if (entry.isIntersecting) {
 							entry.target.classList.add("revealed");
-							observer.unobserve(entry.target); // ya no hay que vigilarlo
+							observer.unobserve(entry.target);
 						}
 					}
 				},
-				// dispara cuando el bloque asoma 80px por el borde inferior
 				{ rootMargin: "0px 0px -80px 0px" },
 			);
-
 			document
 				.querySelectorAll("[data-reveal]")
 				.forEach((el) => observer.observe(el));

@@ -10,7 +10,10 @@ const t = getDict(Astro.currentLocale);
 <section id="work" class="scroll-mt-24 border-b border-line">
 	<div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28" data-reveal>
 		<div class="flex items-end justify-between gap-6">
-			<SectionHeading label={t.portfolio.label} title={t.portfolio.title} />
+			<SectionHeading
+				label={t.portfolio.label}
+				title={t.portfolio.title}
+			/>
 			<a
 				href="#contact"
 				class="group hidden whitespace-nowrap pb-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-muted transition-colors hover:text-accent sm:block"

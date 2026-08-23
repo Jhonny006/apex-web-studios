@@ -1,27 +1,28 @@
 ---
+// Ruta exacta: src/components/Contact.astro
 import { getDict } from "../i18n";
 import SectionHeading from "./ui/SectionHeading.astro";
 
 const t = getDict(Astro.currentLocale);
 
-// Clases compartidas de los campos: un solo lugar para ajustar el estilo.
-// Nota: NUNCA quitar el outline de focus sin dar un reemplazo visible —
-// aquí el reemplazo es el borde lima.
+// Usamos tus tokens de diseño de Tailwind v4 oficiales
 const fieldClass =
-	"w-full border border-line bg-transparent px-4 py-3 text-sm text-ink placeholder:text-ink-muted/50 transition-colors focus:border-accent focus:outline-none";
+	"w-full border border-line bg-surface/50 px-4 py-3 text-sm text-ink transition-colors focus:border-accent focus:outline-none rounded-none font-body";
 const labelClass =
 	"mb-2 block font-mono text-[10px] uppercase tracking-[0.2em] text-ink-muted";
 ---
 
-<section id="contact" class="scroll-mt-24 border-b border-line">
+<section
+	id="contact"
+	class="scroll-mt-24 border-b border-line bg-night text-ink"
+>
 	<div
-		class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2 lg:gap-20"
+		class="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 py-20 lg:grid-cols-2 lg:gap-20"
 		data-reveal
 	>
-		<!-- Columna izquierda: título, blurb, datos y redes -->
+		<!-- LADO IZQUIERDO: DETALLES DE AGENCIA -->
 		<div>
 			<SectionHeading label={t.contact.label} title={t.contact.title} />
-
 			<p class="mt-8 max-w-md text-sm leading-relaxed text-ink-muted">
 				{t.contact.blurb}
 			</p>
@@ -32,7 +33,7 @@ const labelClass =
 					<dd>
 						<a
 							href={`mailto:${t.contact.email}`}
-							class="text-sm text-ink transition-colors hover:text-accent"
+							class="text-sm text-ink hover:text-accent font-body transition-colors"
 						>
 							{t.contact.email}
 						</a>
@@ -43,15 +44,11 @@ const labelClass =
 					<dd>
 						<a
 							href={`tel:${t.contact.phone.replace(/[^+\d]/g, "")}`}
-							class="text-sm text-ink transition-colors hover:text-accent"
+							class="text-sm text-ink hover:text-accent font-body transition-colors"
 						>
 							{t.contact.phone}
 						</a>
 					</dd>
-				</div>
-				<div>
-					<dt class={labelClass}>{t.contact.infoLabels.address}</dt>
-					<dd class="text-sm text-ink">{t.contact.address}</dd>
 				</div>
 			</dl>
 
@@ -69,95 +66,165 @@ const labelClass =
 			</div>
 		</div>
 
-		<!-- Columna derecha: formulario. Sin backend todavía — el atributo
-		     action se conectará a un servicio (Formspree/Resend) o a una
-		     Astro Action cuando toque. -->
-		<form class="space-y-6" novalidate>
-			<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+		<!-- LADO DERECHO: FORMULARIO CONECTADO AL ENDPOINT -->
+		<div>
+			<form id="apex-corporate-form" class="space-y-6" novalidate>
+				<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+					<div>
+						<label for="first-name" class={labelClass}
+							>{t.contact.form.firstName}</label
+						>
+						<input
+							id="first-name"
+							name="firstName"
+							type="text"
+							required
+							class={fieldClass}
+						/>
+					</div>
+					<div>
+						<label for="last-name" class={labelClass}
+							>{t.contact.form.lastName}</label
+						>
+						<input
+							id="last-name"
+							name="lastName"
+							type="text"
+							required
+							class={fieldClass}
+						/>
+					</div>
+				</div>
+
 				<div>
-					<label for="first-name" class={labelClass}>
-						{t.contact.form.firstName}
-					</label>
+					<label for="email" class={labelClass}
+						>{t.contact.form.email}</label
+					>
 					<input
-						id="first-name"
-						name="firstName"
-						type="text"
-						autocomplete="given-name"
+						id="email"
+						name="email"
+						type="email"
 						required
 						class={fieldClass}
 					/>
 				</div>
+
 				<div>
-					<label for="last-name" class={labelClass}>
-						{t.contact.form.lastName}
-					</label>
-					<input
-						id="last-name"
-						name="lastName"
-						type="text"
-						autocomplete="family-name"
+					<label for="project-type" class={labelClass}
+						>{t.contact.form.projectType}</label
+					>
+					<select
+						id="project-type"
+						name="projectType"
 						required
 						class={fieldClass}
-					/>
+					>
+						<option value="" selected disabled
+							>{t.contact.form.selectOne}</option
+						>
+						{
+							t.contact.form.projectTypes.map((type) => (
+								<option
+									value={type}
+									class="bg-surface text-ink"
+								>
+									{type}
+								</option>
+							))
+						}
+					</select>
 				</div>
-			</div>
 
-			<div>
-				<label for="email" class={labelClass}>{t.contact.form.email}</label>
-				<input
-					id="email"
-					name="email"
-					type="email"
-					autocomplete="email"
-					required
-					class={fieldClass}
-				/>
-			</div>
+				<div>
+					<label for="message" class={labelClass}
+						>{t.contact.form.message}</label
+					>
+					<textarea
+						id="message"
+						name="message"
+						rows="5"
+						required
+						class={`${fieldClass} resize-y`}></textarea>
+				</div>
 
-			<div>
-				<label for="project-type" class={labelClass}>
-					{t.contact.form.projectType}
-				</label>
-				<select id="project-type" name="projectType" required class={fieldClass}>
-					<option value="" selected disabled>{t.contact.form.selectOne}</option>
-					{
-						t.contact.form.projectTypes.map((type) => (
-							<option value={type}>{type}</option>
-						))
-					}
-				</select>
-			</div>
-
-			<div>
-				<label for="message" class={labelClass}>{t.contact.form.message}</label>
-				<textarea
-					id="message"
-					name="message"
-					rows="5"
-					required
-					class={`${fieldClass} resize-y`}></textarea>
-			</div>
-
-			<button
-				type="submit"
-				class="group w-full bg-accent py-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-night transition-colors hover:bg-ink"
-			>
-				{t.contact.form.submit}
-				<span
-					class="inline-block transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+				<button
+					type="submit"
+					id="form-submit-trigger"
+					class="group w-full bg-ink py-4 font-mono text-xs font-bold uppercase tracking-[0.18em] text-night transition-all hover:bg-accent hover:text-night flex items-center justify-center gap-2"
 				>
-					&nearr;
-				</span>
-			</button>
-		</form>
+					<span id="trigger-text">{t.contact.form.submit}</span>
+				</button>
+
+				<div
+					id="status-success-panel"
+					class="hidden text-center font-mono text-xs text-accent border border-accent/20 bg-accent/5 py-3.5"
+				>
+					// INTAKE_SUCCESS: PAYLOAD ROUTED COMPLETELY. EXPECT CONTACT
+					WITHIN 48H.
+				</div>
+				<div
+					id="status-error-panel"
+					class="hidden text-center font-mono text-xs text-rose-400 border border-rose-500/20 bg-rose-500/5 py-3.5"
+				>
+					// INTAKE_ERROR: UPLINK TRANSMISSION REJECTED.
+				</div>
+			</form>
+		</div>
 	</div>
 </section>
 
-<style>
-	/* Los <option> nativos ignoran el CSS del select en varios SO:
-	   forzamos fondo oscuro para que el desplegable no salga blanco */
-	option {
-		background-color: var(--color-night);
-		color: var(--color-ink);
+<script>
+	const form = document.getElementById(
+		"apex-corporate-form",
+	) as HTMLFormElement;
+	const triggerBtn = document.getElementById(
+		"form-submit-trigger",
+	) as HTMLButtonElement;
+	const triggerText = document.getElementById("trigger-text");
+	const successBox = document.getElementById("status-success-panel");
+	const errorBox = document.getElementById("status-error-panel");
+
+	if (form && triggerBtn && triggerText && successBox && errorBox) {
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+
+			if (!form.checkValidity()) {
+				form.reportValidity();
+				return;
+			}
+
+			triggerBtn.disabled = true;
+			triggerBtn.classList.add("opacity-40", "cursor-not-allowed");
+			const originalLabel = triggerText.textContent;
+			triggerText.textContent = "TRANSMITTING DATA MATRIX...";
+			successBox.classList.add("hidden");
+			errorBox.classList.add("hidden");
+
+			const formData = new FormData(form);
+			const dataJson = JSON.stringify(Object.fromEntries(formData));
+
+			try {
+				const response = await fetch("/api/send-email", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: dataJson,
+				});
+
+				const result = await response.json();
+
+				if (response.ok && result.success) {
+					successBox.classList.remove("hidden");
+					form.reset();
+				} else {
+					errorBox.classList.remove("hidden");
+				}
+			} catch (err) {
+				errorBox.classList.remove("hidden");
+			} finally {
+				triggerBtn.disabled = false;
+				triggerBtn.classList.remove("opacity-40", "cursor-not-allowed");
+				triggerText.textContent = originalLabel;
+			}
+		});
 	}
-</style>
+</script>

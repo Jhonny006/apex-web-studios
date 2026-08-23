@@ -12,8 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.2",
-    "astro": "^7.0.5",
+    "@astrojs/vercel": "^11.0.7",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.4",
+    "dotenv": "^17.4.2",
+    "postcss": "^8.5.26",
+    "resend": "^6.22.0",
     "tailwindcss": "^4.3.2"
   }
 }

@@ -2,187 +2,177 @@ import type { Dictionary } from "./index";
 
 export const es: Dictionary = {
 	meta: {
-		title: "Apex Web Studios — Creamos Sitios Web Que Convierten",
-		description:
-			"Apex Web Studios diseña y construye productos digitales de alto rendimiento para marcas ambiciosas. Desde 2026, Brooklyn, NY.",
+		title: "Apex Web Studios — Sitios Web y Marketing Diseñados para Hacer Crecer tu Negocio",
+		description: "Apex Web Studios diseña sitios web atractivos, construye herramientas de software personalizadas y gestiona campañas de marketing que te traen más clientes. Con sede en Nashville, TN.",
 	},
-
 	nav: {
 		links: [
-			{ label: "Trabajo", href: "#work" },
+			{ label: "Proyectos", href: "#work" },
 			{ label: "Servicios", href: "#services" },
 			{ label: "Proceso", href: "#process" },
 			{ label: "Estudio", href: "#studio" },
 			{ label: "Contacto", href: "#contact" },
 		],
-		cta: "Inicia tu Proyecto",
+		cta: "Iniciar Proyecto",
 	},
-
 	hero: {
 		tag: "Estudio Web Premier",
-		est: "Desde 2019",
-		location: "Brooklyn, NY",
-		lines: ["Creamos", "Sitios Web", "que atraen más clientes a su negocio."],
-		paragraph:
-			"Apex Web Studios diseña y construye productos digitales de alto rendimiento para marcas ambiciosas. Sin plantillas. Sin atajos. Cada proyecto, construido desde los fundamentos.",
+		est: "Est. 2026",
+		location: "Nashville, TN",
+		lines: ["Creamos", "Sitios Web", "que atraen más clientes a tu negocio."],
+		paragraph: "Apex Web Studios diseña, desarrolla y optimiza productos digitales premium y estrategias de marketing basadas en datos para marcas en crecimiento. Sin atajos. Cada sistema construido desde cero.",
 		viewWork: "Ver Nuestro Trabajo",
-		cta: "Inicia tu Proyecto",
-		scroll: "Scroll",
+		cta: "Iniciar Proyecto",
+		scroll: "Desplazar",
 	},
-
 	marquee: [
 		"Diseño Web",
-		"Desarrollo",
-		"Branding",
-		"Estrategia UX",
-		"Rendimiento",
-		"Motion",
+		"Páginas de Aterrizaje de Alta Conversión",
+		"Marketing Digital",
+		"Software para Negocios",
+		"Gestión de Bases de Datos",
+		"Estrategia de Crecimiento",
 	],
-
 	stats: [
-		{ value: "140+", label: "Proyectos Entregados" },
+		{ value: "7+", label: "Sistemas Entregados" },
 		{ value: "98%", label: "Retención de Clientes" },
-		{ value: "6", label: "Años del Estudio" },
-		{ value: "12", label: "Miembros del Equipo" },
+		{ value: "Est. 2026", label: "Lanzamiento del Estudio" },
+		{ value: "3+", label: "Expertos Clave" },
 	],
-
 	portfolio: {
 		label: "Trabajo Seleccionado",
 		title: "Portafolio",
 		allProjects: "Todos los Proyectos",
 		projects: [
 			{
-				name: "Meridian Capital",
-				category: "Finanzas / Web App",
-				year: "2025",
+				name: "Ecosistema Integrado de Inventario y Facturación",
+				category: "Arquitectura Backend / Java & Spring Boot",
+				year: "2026"
 			},
 			{
-				name: "Sola Architecture",
-				category: "Estudio de Diseño / Marca",
-				year: "2024",
+				name: "Páginas de Aterrizaje Optimizadas para Conversión (CRO)",
+				category: "Desarrollo Frontend / Astro & Tailwind",
+				year: "2026"
 			},
-			{ name: "Vanta Logistics", category: "SaaS / Dashboard", year: "2024" },
-			{ name: "Ore & Iron", category: "E-Commerce / Marca", year: "2023" },
+			{
+				name: "Plataforma de Reserva de Vehículos Bajo Demanda",
+				category: "Desarrollo de Producto / Concepto de Sistema",
+				year: "2026"
+			},
+			{
+				name: "Generador de Clientes Potenciales para Contratistas",
+				category: "SEO Local y Posicionamiento de Marca / En Progreso",
+				year: "2026"
+			},
 		],
 	},
-
 	services: {
 		label: "Qué Hacemos",
 		title: "Servicios",
 		items: [
 			{
-				title: "Diseño Web",
-				description:
-					"Interfaces de precisión milimétrica construidas para convertir. Cada interacción es deliberada, cada transición se gana su lugar.",
-				tags: ["UI/UX", "Figma", "Prototipado"],
+				title: "Diseño de Sitios Web",
+				description: "Estructuras de sitios web profesionales y hechas a la medida para encajar con tu marca. Diseñamos interfaces fáciles de usar que capturan la atención de tus visitantes y construyen confianza inmediata.",
+				tags: ["Diseños Personalizados", "Apto para Celulares", "Identidad de Marca"],
 			},
 			{
-				title: "Desarrollo",
-				description:
-					"Código de nivel producción. React, Astro, TypeScript — sin atajos, sin dependencia de proveedores, sin lastre.",
-				tags: ["React", "Astro", "TypeScript"],
+				title: "Software Comercial a la Medida",
+				description: "Construimos herramientas digitales específicas para automatizar tus operaciones diarias. Desde sistemas automáticos de facturación a clientes y control de inventarios, hasta pasarelas de pago seguras.",
+				tags: ["Sistemas de Pago", "Bases de Datos Seguras", "Herramientas Internas"],
 			},
 			{
-				title: "Estrategia Digital",
-				description:
-					"Mapeamos el recorrido completo del usuario. De la arquitectura de marca a la analítica, tu presencia digital funciona como un sistema.",
-				tags: ["Estrategia", "SEO", "Analítica"],
+				title: "Marketing Digital y Embudos de Venta",
+				description: "Estrategias de marketing en línea inteligentes diseñadas para encontrar a tu público ideal. Creamos páginas de venta de alto rendimiento y campañas de anuncios que convierten el tráfico web diario en clientes de pago.",
+				tags: ["Generación de Clientes", "Crecimiento de Ventas", "Adquisición de Usuarios"],
 			},
 			{
-				title: "Rendimiento",
-				description:
-					"Cargas por debajo del segundo. Lighthouse en 100. Tratamos el rendimiento como una restricción de diseño, no como una ocurrencia tardía.",
-				tags: ["Core Web Vitals", "CDN", "Optimización"],
+				title: "Optimización en Google y Velocidad",
+				description: "Construimos sitios web que cargan al instante y están completamente preparados para aparecer más arriba en los motores de búsqueda. Esto hace que sea mucho más fácil para los clientes locales encontrar tu negocio primero.",
+				tags: ["Posicionamiento Google (SEO)", "Carga Ultra-Rápida", "Actualizaciones de Rendimiento"],
 			},
 		],
 	},
-
 	process: {
 		label: "Cómo Trabajamos",
 		title: "Proceso",
 		steps: [
 			{
-				title: "Descubrimiento",
-				description:
-					"Dos semanas de inmersión. Auditamos tu posición de mercado, entrevistamos a los interesados y mapeamos cada punto de contacto antes de colocar un solo píxel.",
+				title: "Descubrimiento y Estrategia",
+				description: "Inmersión profunda en tu mercado objetivo. Aislamos tus objetivos comerciales, analizamos a la competencia y estructuramos tu mapa de conversión antes de escribir código.",
 			},
 			{
 				title: "Arquitectura",
-				description:
-					"Jerarquía de información, flujos de usuario y andamiaje técnico. El esqueleto que hace posible todo lo demás.",
+				description: "Jerarquía de información, modelado de datos transaccionales y andamiaje técnico central. El esqueleto sólido que mantiene seguras y confiables las operaciones del software.",
 			},
 			{
 				title: "Diseño",
-				description:
-					"Sistemas de Figma de alta fidelidad. Cada estado, cada breakpoint, cada caso límite — documentado y aprobado antes de comenzar el desarrollo.",
+				description: "Sistemas de diseño de componentes de alta fidelidad. Cada punto de interrupción, elemento interactivo y caso extremo se detalla y aprueba minuciosamente.",
 			},
 			{
 				title: "Construcción",
-				description:
-					"Código limpio, revisado y probado. Desplegamos a staging, corremos auditorías de Lighthouse y hacemos QA en 12 configuraciones de dispositivos y navegadores.",
+				description: "Código fuente limpio, bien revisado y de calidad premium. Desplegamos en áreas de prueba aisladas, ejecutando estrictas pruebas en múltiples dispositivos y auditorías de rendimiento.",
 			},
 			{
-				title: "Lanzamiento",
-				description:
-					"Salida monitorizada con un canal de Slack dedicado. No desaparecemos tras la entrega — el soporte post-lanzamiento viene incluido.",
+				title: "Lanzamiento y Escala",
+				description: "Despliegue de producto fluido junto con el seguimiento de analíticas en vivo y protocolos de optimización de marketing para garantizar una tracción operativa inmediata.",
 			},
 		],
 	},
-
 	studio: {
 		label: "El Equipo",
 		title: "Estudio",
-		intro:
-			"Somos un equipo enfocado de doce personas — diseñadores, ingenieros y estrategas trabajando desde Brooklyn. Lo bastante pequeños para cuidar cada detalle, lo bastante grandes para movernos rápido. Aceptamos seis proyectos nuevos por trimestre, y somos selectivos.",
-		location: "Brooklyn, NY",
-		est: "Desde 2019",
-		photoAlt: "Oficina de Apex Web Studios en Brooklyn, Nueva York",
+		intro: "Somos un equipo de élite especializado en diseñadores, ingenieros y estrategistas de crecimiento que operan desde Nashville, TN. Altamente enfocados y minuciosamente selectivos, aceptamos un número limitado de proyectos por trimestre para garantizar una ingeniería profundamente personalizada y una velocidad de ejecución inigualable.",
+		location: "Nashville, TN",
+		est: "Est. 2026",
+		photoAlt: "Espacio de trabajo de desarrollo de software de Apex Web Studios en Nashville, TN",
 		sinceLabel: "Desde",
 		team: [
 			{
-				name: "Reece Aldeman",
-				role: "Fundador / Director Creativo",
-				since: "2019",
+				name: "Jhonny Trujillo",
+				role: "Fundador / Ingeniero Principal de Software",
+				since: "2026",
 			},
-			{ name: "Mara Szabó", role: "Desarrolladora Líder", since: "2020" },
-			{ name: "Kwame Osei", role: "Director de Estrategia", since: "2021" },
-			{ name: "Lucia Ferretti", role: "Diseñadora Senior", since: "2022" },
+			{
+				name: "Kevin Perez",
+				role: "Desarrollador Frontend Líder",
+				since: "2026"
+			},
+			{
+				name: "James Ink",
+				role: "Director de Estrategia Digital y Marketing",
+				since: "2026"
+			},
 		],
 	},
-
 	ctaBand: {
-		title: "¿Listo para construir algo excepcional?",
-		cta: "Inicia tu Proyecto",
+		title: "¿Listo para Construir Algo Excepcional?",
+		cta: "Iniciar Proyecto",
 	},
-
 	contact: {
-		label: "Hablemos",
+		label: "Ponte en Contacto",
 		title: "Contacto",
-		blurb:
-			"Abrimos la agenda a nuevos proyectos cada trimestre. Cuéntanos qué estás construyendo — responderemos en menos de 48 horas con una invitación a una llamada de descubrimiento.",
-		email: "hello@apexwebstudios.com",
-		phone: "+1 (718) 555-0147",
-		address: "74 Wythe Ave, Brooklyn, NY 11249",
-		socials: ["Dribbble", "Twitter", "Behance", "Instagram", "LinkedIn"],
-		infoLabels: { email: "Email", phone: "Teléfono", address: "Dirección" },
+		blurb: "Abrimos nuestra agenda para nuevos proyectos corporativos cada trimestre. Describe los parámetros de tu proyecto a continuación y nuestro equipo de ingeniería se comunicará contigo en menos de 48 horas para programar una llamada de descubrimiento.",
+		email: "apexwebstudioscontact@gmail.com",
+		phone: "+1 (615) 647-0123",
+		socials: ["LinkedIn", "GitHub", "Twitter", "Instagram"],
+		infoLabels: { email: "Correo", phone: "Teléfono", address: "Ubicación" },
 		form: {
 			firstName: "Nombre",
 			lastName: "Apellido",
-			email: "Email",
+			email: "Correo Electrónico",
 			projectType: "Tipo de Proyecto",
 			projectTypes: [
-				"Diseño Web",
-				"Desarrollo",
-				"Diseño + Desarrollo",
-				"Estrategia Digital",
+				"Desarrollo de Páginas de Aterrizaje",
+				"Software Backend Personalizado",
+				"Campaña de Marketing Digital",
+				"Diseño y Construcción Full-Stack",
 				"Otra cosa",
 			],
-			selectOne: "Selecciona una opción",
-			message: "Mensaje",
-			submit: "Enviar Consulta",
+			selectOne: "Selecciona uno",
+			message: "Detalles del Proyecto",
+			submit: "Enviar Solicitud",
 		},
 	},
-
 	footer: {
 		rights: "Todos los derechos reservados.",
 		links: ["Privacidad", "Términos"],

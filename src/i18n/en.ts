@@ -2,11 +2,9 @@ import type { Dictionary } from "./index";
 
 export const en: Dictionary = {
 	meta: {
-		title: "Apex Web Studios — We Build Websites That Convert",
-		description:
-			"Apex Web Studios designs and engineers high-performance digital products for ambitious brands. Est. 2026, Brooklyn, NY.",
+		title: "Apex Web Studios — Websites & Marketing Built to Grow Your Business",
+		description: "Apex Web Studios designs beautiful websites, builds custom business tools, and runs marketing campaigns that bring you more customers. Based in Nashville, TN.",
 	},
-
 	nav: {
 		links: [
 			{ label: "Work", href: "#work" },
@@ -17,168 +15,164 @@ export const en: Dictionary = {
 		],
 		cta: "Start a Project",
 	},
-
 	hero: {
 		tag: "Premier Web Studio",
-		est: "Est. 2019",
-		location: "Brooklyn, NY",
-		lines: ["We Build", "Websites", "that drive more customers to your business."],
-		paragraph:
-			"Apex Web Studios designs and engineers high-performance digital products for ambitious brands. No templates. No shortcuts. Every project, built from first principles.",
+		est: "Est. 2026",
+		location: "Nashville, TN",
+		lines: ["We Build", "Websites", "That drive more customers to your business."],
+		paragraph: "Apex Web Studios designs, develops, and optimizes premium digital products and data-driven marketing frameworks for scaling brands. No shortcuts. Every system built from first principles.",
 		viewWork: "View Our Work",
 		cta: "Start a Project",
 		scroll: "Scroll",
 	},
-
 	marquee: [
 		"Web Design",
-		"Development",
-		"Branding",
-		"UX Strategy",
-		"Performance",
-		"Motion",
+		"High-Converting Landing Pages",
+		"Digital Marketing",
+		"Business Software",
+		"Database Management",
+		"Growth Strategy",
 	],
-
 	stats: [
-		{ value: "140+", label: "Projects Shipped" },
+		{ value: "7+", label: "Systems Shipped" },
 		{ value: "98%", label: "Client Retention" },
-		{ value: "6yr", label: "Studio Age" },
-		{ value: "12", label: "Team Members" },
+		{ value: "Est. 2026", label: "Studio Launch" },
+		{ value: "3+", label: "Core Experts" },
 	],
-
 	portfolio: {
 		label: "Selected Work",
 		title: "Portfolio",
 		allProjects: "All Projects",
 		projects: [
-			{ name: "Meridian Capital", category: "Finance / Web App", year: "2025" },
 			{
-				name: "Sola Architecture",
-				category: "Design Studio / Brand",
-				year: "2024",
+				name: "Integrated Inventory & Invoicing Ecosystem",
+				category: "Backend Architecture",
+				year: "2026"
 			},
-			{ name: "Vanta Logistics", category: "SaaS / Dashboard", year: "2024" },
-			{ name: "Ore & Iron", category: "E-Commerce / Brand", year: "2023" },
+			{
+				name: "Conversion-Rate-Optimized (CRO) Landing Pages",
+				category: "Frontend Development",
+				year: "2026"
+			},
+			{
+				name: "On-Demand Vehicle Reservation Framework",
+				category: "Product Development",
+				year: "2026"
+			},
+			{
+				name: "Commercial Contractor Lead Generator",
+				category: "Local SEO & Brand Strategy",
+				year: "2026"
+			},
 		],
 	},
-
 	services: {
 		label: "What We Do",
 		title: "Services",
 		items: [
 			{
-				title: "Web Design",
-				description:
-					"Pixel-precise interfaces built for conversion. Every interaction is deliberate, every transition earns its place.",
-				tags: ["UI/UX", "Figma", "Prototyping"],
+				title: "Website Design",
+				description: "Bespoke, professional website layouts built from the ground up to match your brand. We design easy-to-use interfaces that capture your visitors' attention and build immediate trust.",
+				tags: ["Custom Layouts", "Mobile Friendly", "Branding"],
 			},
 			{
-				title: "Development",
-				description:
-					"Production-grade code. React, Astro, TypeScript — no shortcuts, no vendor lock-in, no bloat.",
-				tags: ["React", "Astro", "TypeScript"],
+				title: "Custom Business Software",
+				description: "We build tailored digital tools to automate your daily operations. From automated client billing systems and inventory management to secure payment processing setups.",
+				tags: ["Payment Systems", "Secure Databases", "Custom Tools"],
 			},
 			{
-				title: "Digital Strategy",
-				description:
-					"We map the full user journey. From brand architecture to analytics, your digital presence runs as a system.",
-				tags: ["Strategy", "SEO", "Analytics"],
+				title: "Digital Marketing & Sales Funnels",
+				description: "Smart online marketing strategies designed to find your ideal audience. We build high-performing sales pages and ad campaigns that turn everyday internet traffic into paying clients.",
+				tags: ["Lead Generation", "Sales Growth", "Customer Acquisition"],
 			},
 			{
-				title: "Performance",
-				description:
-					"Sub-second loads. 100 Lighthouse scores. We treat performance as a design constraint, not an afterthought.",
-				tags: ["Core Web Vitals", "CDN", "Optimization"],
+				title: "Google Optimization & Speed",
+				description: "We build websites that load instantly and are fully optimized to rank higher on search engines. This makes it easier for local customers in your area to find your business first.",
+				tags: ["Google Ranking (SEO)", "Ultra-Fast Loading", "Performance Updates"],
 			},
 		],
 	},
-
 	process: {
 		label: "How We Work",
 		title: "Process",
 		steps: [
 			{
-				title: "Discovery",
-				description:
-					"Two-week immersion. We audit your market position, interview stakeholders, and map every touchpoint before a single pixel is placed.",
+				title: "Discovery & Strategy",
+				description: "Deep target market immersion. We isolate your commercial objectives, audit competitors, and structure your conversion map before writing code.",
 			},
 			{
 				title: "Architecture",
-				description:
-					"Information hierarchy, user flows, and technical scaffolding. The skeleton that makes everything else possible.",
+				description: "Information hierarchy, transactional data modeling, and core technical scaffolding. The solid skeleton that keeps software operations secure and reliable.",
 			},
 			{
 				title: "Design",
-				description:
-					"High-fidelity Figma systems. Every state, every breakpoint, every edge case — documented and approved before development begins.",
+				description: "High-fidelity component design systems. Every breakpoint, interactive element, and edge case is thoroughly detailed and approved.",
 			},
 			{
 				title: "Build",
-				description:
-					"Clean, reviewed, tested code. We deploy to staging, run Lighthouse audits, and QA across 12 device and browser configurations.",
+				description: "Clean, well-reviewed, premium source code. We deploy to isolated staging areas, executing strict multi-device testing and performance compliance audits.",
 			},
 			{
-				title: "Launch",
-				description:
-					"Monitored rollout with a dedicated Slack channel. We don't disappear at handoff — post-launch support is baked in.",
+				title: "Launch & Scale",
+				description: "Seamless product deployment alongside live analytics tracking and marketing optimization protocols to guarantee immediate operational traction.",
 			},
 		],
 	},
-
 	studio: {
 		label: "The Team",
 		title: "Studio",
-		intro:
-			"We're a focused team of twelve — designers, engineers, and strategists working from Brooklyn. Small enough to care deeply, large enough to move fast. We take on six new projects per quarter, and we're selective about it.",
-		location: "Brooklyn, NY",
-		est: "Est. 2019",
-		photoAlt: "Apex Web Studios office in Brooklyn, New York",
+		intro: "We're a specialized, elite team of designers, engineers, and growth strategists operating from Nashville, TN. Highly focused and thoroughly selective, we accept a limited number of corporate operations per quarter to guarantee deeply personalized engineering and unmatched execution velocity.",
+		location: "Nashville, TN",
+		est: "Est. 2026",
+		photoAlt: "Apex Web Studios workspace in Nashville, TN",
 		sinceLabel: "Since",
 		team: [
 			{
-				name: "Reece Aldeman",
-				role: "Founder / Creative Director",
-				since: "2019",
+				name: "Jhonny Trujillo",
+				role: "Founder / Principal Software Engineer",
+				since: "2026",
 			},
-			{ name: "Mara Szabó", role: "Lead Developer", since: "2020" },
-			{ name: "Kwame Osei", role: "Head of Strategy", since: "2021" },
-			{ name: "Lucia Ferretti", role: "Senior Designer", since: "2022" },
+			{
+				name: "Kevin Perez",
+				role: "Lead Frontend Developer",
+				since: "2026"
+			},
+			{
+				name: "James Ink",
+				role: "Head of Digital Strategy & Marketing",
+				since: "2026"
+			},
 		],
 	},
-
 	ctaBand: {
 		title: "Ready to Build Something Exceptional?",
 		cta: "Start a Project",
 	},
-
 	contact: {
 		label: "Get in Touch",
 		title: "Contact",
-		blurb:
-			"We open our books to new projects quarterly. Tell us what you're building — we'll respond within 48 hours with a discovery call invitation.",
-		email: "hello@apexwebstudios.com",
-		phone: "+1 (718) 555-0147",
-		address: "74 Wythe Ave, Brooklyn, NY 11249",
-		socials: ["Dribbble", "Twitter", "Behance", "Instagram", "LinkedIn"],
-		infoLabels: { email: "Email", phone: "Phone", address: "Address" },
+		blurb: "We open our intake books to new corporate projects quarterly. Outline your build parameters below, and our engineering team will follow up within 48 hours to schedule a direct discovery consultation.",
+		email: "apexwebstudioscontact@gmail.com",
+		phone: "+1 (615) 647-0123",
+		socials: ["LinkedIn", "GitHub", "Twitter", "Instagram"],
+		infoLabels: { email: "Email", phone: "Phone", address: "Location" },
 		form: {
 			firstName: "First Name",
 			lastName: "Last Name",
 			email: "Email",
 			projectType: "Project Type",
 			projectTypes: [
-				"Web Design",
-				"Development",
-				"Design + Development",
-				"Digital Strategy",
+				"Landing Page Development",
+				"Custom Backend Software",
+				"Digital Marketing Campaign",
+				"Full-Stack Design & Build",
 				"Something else",
 			],
 			selectOne: "Select one",
-			message: "Message",
+			message: "Project Details",
 			submit: "Send Inquiry",
 		},
 	},
-
 	footer: {
 		rights: "All rights reserved.",
 		links: ["Privacy", "Terms"],
