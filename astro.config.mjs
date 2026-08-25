@@ -5,24 +5,28 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build
 export default defineConfig({
-  // OBLIGATORIO: Desbloquea las rutas de servidor (APIs) tanto en local como en producción
+  // OBLIGATORIO: Habilita el modo servidor para que las rutas API funcionen
   output: 'server',
 
-  // Configuración del adaptador para producción
+  // Configuración del adaptador para producción (Vercel)
   adapter: vercel(),
 
-  // Dominio canónico de Apex Web Studios
+  // Dominio canónico de tu agencia
   site: 'https://apexwebstudios.com',
 
-  // i18n nativo bilingüe original
+  // Configuración bilingüe corregida para APIs
   i18n: {
     locales: ['en', 'es'],
     defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: false, // Evita que /api/send-email devuelva 404
+      redirectToDefaultLocale: false
+    }
   },
 
   vite: {
     plugins: [tailwindcss()],
-    // Corrige el conflicto de compilación local en entornos Windows
+    // Corrige conflictos de compilación en Windows
     ssr: {
       noExternal: ['@tailwindcss/vite']
     }

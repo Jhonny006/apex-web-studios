@@ -1,0 +1,44 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Integrated Inventory &amp; Invoicing Ecosystem</title>
+<rect width="800" height="500" fill="#0a0a0a"/>
+<rect x="0.5" y="0.5" width="799" height="499" fill="none" stroke="#262626" stroke-width="1"/>
+
+<text x="40" y="46" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#737373">// ARCH_DIAGRAM_01</text>
+<text x="40" y="72" font-family="ui-monospace, monospace" font-size="16" font-weight="700" fill="#f5f5f5">INVENTORY &amp; INVOICING ECOSYSTEM</text>
+
+<!-- Client App node -->
+<rect x="40" y="140" width="150" height="60" rx="2" fill="#141414" stroke="#262626" stroke-width="1"/>
+<text x="115" y="165" font-family="ui-monospace, monospace" font-size="12" fill="#f5f5f5" text-anchor="middle">CLIENT APP</text>
+<text x="115" y="182" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="middle">React / REST</text>
+
+<!-- API Gateway -->
+<rect x="325" y="140" width="150" height="60" rx="2" fill="#141414" stroke="#aaff00" stroke-width="1"/>
+<text x="400" y="165" font-family="ui-monospace, monospace" font-size="12" fill="#aaff00" text-anchor="middle">API GATEWAY</text>
+<text x="400" y="182" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="middle">Auth / Routing</text>
+
+<!-- Inventory service -->
+<rect x="230" y="280" width="150" height="60" rx="2" fill="#141414" stroke="#262626" stroke-width="1"/>
+<text x="305" y="305" font-family="ui-monospace, monospace" font-size="12" fill="#f5f5f5" text-anchor="middle">INVENTORY SVC</text>
+<text x="305" y="322" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="middle">Stock / SKU</text>
+
+<!-- Invoicing service -->
+<rect x="420" y="280" width="150" height="60" rx="2" fill="#141414" stroke="#262626" stroke-width="1"/>
+<text x="495" y="305" font-family="ui-monospace, monospace" font-size="12" fill="#f5f5f5" text-anchor="middle">INVOICING SVC</text>
+<text x="495" y="322" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="middle">Billing / PDF</text>
+
+<!-- Database -->
+<rect x="610" y="140" width="150" height="60" rx="2" fill="#141414" stroke="#262626" stroke-width="1"/>
+<text x="685" y="165" font-family="ui-monospace, monospace" font-size="12" fill="#f5f5f5" text-anchor="middle">DATABASE</text>
+<text x="685" y="182" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="middle">PostgreSQL</text>
+
+<!-- Connectors -->
+<line x1="190" y1="170" x2="325" y2="170" stroke="#262626" stroke-width="1"/>
+<line x1="400" y1="200" x2="305" y2="280" stroke="#262626" stroke-width="1"/>
+<line x1="400" y1="200" x2="495" y2="280" stroke="#262626" stroke-width="1"/>
+<line x1="475" y1="170" x2="610" y2="170" stroke="#262626" stroke-width="1"/>
+<line x1="305" y1="280" x2="640" y2="200" stroke="#262626" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="495" y1="280" x2="700" y2="200" stroke="#262626" stroke-width="1" stroke-dasharray="3 3"/>
+
+<text x="40" y="460" font-family="ui-monospace, monospace" font-size="10" letter-spacing="1" fill="#737373">BACKEND ARCHITECTURE</text>
+<text x="760" y="460" font-family="ui-monospace, monospace" font-size="10" fill="#737373" text-anchor="end">2026</text>
+</svg>

@@ -160,6 +160,7 @@ export const es: Dictionary = {
 			firstName: "Nombre",
 			lastName: "Apellido",
 			email: "Correo Electrónico",
+			phone: "Número de Teléfono",
 			projectType: "Tipo de Proyecto",
 			projectTypes: [
 				"Desarrollo de Páginas de Aterrizaje",

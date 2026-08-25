@@ -3,6 +3,14 @@ import { getDict } from "../i18n";
 import SectionHeading from "./ui/SectionHeading.astro";
 
 const t = getDict(Astro.currentLocale);
+
+// Mapeo por índice: mismo orden que t.portfolio.projects en ambos diccionarios (en.ts / es.ts)
+const projectImages = [
+	"/portfolio/project-inventory-invoicing.svg",
+	"/portfolio/project-cro-landing.svg",
+	"/portfolio/project-vehicle-reservation.svg",
+	"/portfolio/project-lead-generator.svg",
+];
 ---
 
 <!-- scroll-mt-24: el header sticky taparía el título al saltar a #work;
@@ -27,34 +35,40 @@ const t = getDict(Astro.currentLocale);
 			</a>
 		</div>
 
-		<!-- divide-y pone 1px entre filas; border-y cierra arriba y abajo -->
-		<ul class="mt-14 divide-y divide-line border-y border-line">
+		<ul class="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
 			{
 				t.portfolio.projects.map((project, i) => (
 					<li>
-						<a
-							href="#contact"
-							class="group flex items-center justify-between gap-5 py-6 sm:py-7"
-						>
-							<span class="flex items-baseline gap-5 sm:gap-8">
-								<span class="font-mono text-xs text-ink-muted">
-									{String(i + 1).padStart(2, "0")}
+						<a href="#contact" class="group block">
+							<div class="overflow-hidden border border-line bg-night">
+								<img
+									src={projectImages[i]}
+									alt={project.name}
+									class="aspect-video w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+									loading="lazy"
+								/>
+							</div>
+							<div class="mt-5 flex items-baseline justify-between gap-4">
+								<span class="flex items-baseline gap-4">
+									<span class="font-mono text-xs text-ink-muted">
+										{String(i + 1).padStart(2, "0")}
+									</span>
+									<span class="font-headline text-lg font-bold uppercase transition-colors group-hover:text-accent sm:text-xl">
+										{project.name}
+									</span>
 								</span>
-								<span class="font-headline text-xl font-bold uppercase transition-colors group-hover:text-accent sm:text-3xl">
-									{project.name}
+								<span class="text-ink-muted transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
+									&nearr;
 								</span>
-							</span>
-							<span class="flex items-center gap-5 sm:gap-10">
-								<span class="hidden font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted md:block">
+							</div>
+							<div class="mt-2 flex items-baseline gap-4 pl-8">
+								<span class="font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted">
 									{project.category}
 								</span>
 								<span class="font-mono text-[11px] text-ink-muted">
 									{project.year}
 								</span>
-								<span class="text-ink-muted transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
-									&nearr;
-								</span>
-							</span>
+							</div>
 						</a>
 					</li>
 				))

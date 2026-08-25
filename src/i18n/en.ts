@@ -154,12 +154,13 @@ export const en: Dictionary = {
 		blurb: "We open our intake books to new corporate projects quarterly. Outline your build parameters below, and our engineering team will follow up within 48 hours to schedule a direct discovery consultation.",
 		email: "apexwebstudioscontact@gmail.com",
 		phone: "+1 (615) 647-0123",
-		socials: ["LinkedIn", "GitHub", "Twitter", "Instagram"],
+		socials: ["Instagram"],
 		infoLabels: { email: "Email", phone: "Phone", address: "Location" },
 		form: {
 			firstName: "First Name",
 			lastName: "Last Name",
 			email: "Email",
+			phone: "Phone Number",
 			projectType: "Project Type",
 			projectTypes: [
 				"Landing Page Development",
