@@ -9,15 +9,17 @@ export const en: Dictionary = {
 		links: [
 			{ label: "Work", href: "#work" },
 			{ label: "Services", href: "#services" },
+			{ label: "Pricing", href: "#pricing" },
 			{ label: "Process", href: "#process" },
 			{ label: "Studio", href: "#studio" },
+			{ label: "FAQ", href: "#faq" },
 			{ label: "Contact", href: "#contact" },
 		],
 		cta: "Start a Project",
 	},
 	hero: {
 		tag: "Premier Web Studio",
-		est: "Est. 2026",
+		est: "Est. 2025",
 		location: "Nashville, TN",
 		lines: ["We Build", "Websites", "That drive more customers to your business."],
 		paragraph: "Apex Web Studios designs, develops, and optimizes premium digital products and data-driven marketing frameworks for scaling brands. No shortcuts. Every system built from first principles.",
@@ -34,10 +36,10 @@ export const en: Dictionary = {
 		"Growth Strategy",
 	],
 	stats: [
-		{ value: "7+", label: "Systems Shipped" },
-		{ value: "98%", label: "Client Retention" },
-		{ value: "Est. 2026", label: "Studio Launch" },
-		{ value: "3+", label: "Core Experts" },
+		{ value: "5+", label: "Systems Shipped" },
+		{ value: "100%", label: "Direct Communication" },
+		{ value: "Est. 2025", label: "Studio Launch" },
+		{ value: "2+", label: "Core Experts" },
 	],
 	portfolio: {
 		label: "Selected Work",
@@ -47,21 +49,6 @@ export const en: Dictionary = {
 			{
 				name: "Integrated Inventory & Invoicing Ecosystem",
 				category: "Backend Architecture",
-				year: "2026"
-			},
-			{
-				name: "Conversion-Rate-Optimized (CRO) Landing Pages",
-				category: "Frontend Development",
-				year: "2026"
-			},
-			{
-				name: "On-Demand Vehicle Reservation Framework",
-				category: "Product Development",
-				year: "2026"
-			},
-			{
-				name: "Commercial Contractor Lead Generator",
-				category: "Local SEO & Brand Strategy",
 				year: "2026"
 			},
 		],
@@ -89,6 +76,50 @@ export const en: Dictionary = {
 				title: "Google Optimization & Speed",
 				description: "We build websites that load instantly and are fully optimized to rank higher on search engines. This makes it easier for local customers in your area to find your business first.",
 				tags: ["Google Ranking (SEO)", "Ultra-Fast Loading", "Performance Updates"],
+			},
+		],
+	},
+	pricing: {
+		label: "Investment",
+		title: "Pricing",
+		intro: "Transparent starting prices. Every project is scoped individually — these are starting points, not final quotes.",
+		packages: [
+			{
+				name: "Landing Page",
+				price: "From $750",
+				description: "A single, high-converting page built to turn visitors into leads or customers.",
+				features: [
+					"Custom design & copywriting support",
+					"Mobile optimized",
+					"Contact form with email integration",
+					"Analytics setup",
+				],
+				cta: "Get Started",
+			},
+			{
+				name: "Business Website",
+				price: "From $1,500",
+				description: "A full multi-page site for businesses that need more than a single landing page.",
+				features: [
+					"Up to 5 pages",
+					"SEO fundamentals",
+					"Custom design system",
+					"Analytics & tracking setup",
+				],
+				cta: "Get Started",
+				featured: true,
+			},
+			{
+				name: "Custom Software",
+				price: "Custom Quote",
+				description: "Tailored business tools — billing systems, inventory management, internal dashboards.",
+				features: [
+					"Custom backend architecture",
+					"Secure database design",
+					"Payment integrations",
+					"Ongoing support available",
+				],
+				cta: "Book a Call",
 			},
 		],
 	},
@@ -121,9 +152,9 @@ export const en: Dictionary = {
 	studio: {
 		label: "The Team",
 		title: "Studio",
-		intro: "We're a specialized, elite team of designers, engineers, and growth strategists operating from Nashville, TN. Highly focused and thoroughly selective, we accept a limited number of corporate operations per quarter to guarantee deeply personalized engineering and unmatched execution velocity.",
+		intro: "We're a small, focused team of engineers and growth strategists operating from Nashville, TN. We work with a limited number of projects at a time so every client gets direct, hands-on attention from start to launch.",
 		location: "Nashville, TN",
-		est: "Est. 2026",
+		est: "Est. 2025",
 		photoAlt: "Apex Web Studios workspace in Nashville, TN",
 		sinceLabel: "Since",
 		team: [
@@ -137,10 +168,31 @@ export const en: Dictionary = {
 				role: "Lead Frontend Developer",
 				since: "2026"
 			},
+		],
+	},
+	faq: {
+		label: "Questions",
+		title: "FAQ",
+		items: [
 			{
-				name: "James Ink",
-				role: "Head of Digital Strategy & Marketing",
-				since: "2026"
+				question: "How long does a project usually take?",
+				answer: "A landing page typically takes 1–2 weeks. Full websites or custom software take 3–6 weeks depending on scope. We'll give you a clear timeline before we start.",
+			},
+			{
+				question: "Do you work with small or new businesses?",
+				answer: "Yes. We work with businesses of all sizes, including startups and solo founders. If you're just getting started, we'll help you figure out what you actually need.",
+			},
+			{
+				question: "What happens after my site launches?",
+				answer: "We stay involved after launch — fixing bugs, making small updates, and helping you track how the site is performing. Ongoing support plans are available if you want us handling updates long-term.",
+			},
+			{
+				question: "Can you help with marketing too, not just the website?",
+				answer: "Yes. Beyond design and development, we set up analytics, email automation, and campaigns to help turn visitors into paying customers.",
+			},
+			{
+				question: "How much involvement do I need to have?",
+				answer: "As much or as little as you'd like. Most clients join a kickoff call, review designs at key milestones, and approve the final build — we handle the rest.",
 			},
 		],
 	},

@@ -42,6 +42,20 @@ export interface TeamMember {
 	since: string;
 }
 
+export interface PricingPackage {
+	name: string;
+	price: string;
+	description: string;
+	features: string[];
+	cta: string;
+	featured?: boolean;
+}
+
+export interface FaqItem {
+	question: string;
+	answer: string;
+}
+
 /* ---------- El contrato completo de un idioma ---------- */
 
 export interface Dictionary {
@@ -66,6 +80,12 @@ export interface Dictionary {
 		projects: Project[];
 	};
 	services: { label: string; title: string; items: Service[] };
+	pricing: {
+		label: string;
+		title: string;
+		intro: string;
+		packages: PricingPackage[];
+	};
 	process: { label: string; title: string; steps: ProcessStep[] };
 	studio: {
 		label: string;
@@ -77,6 +97,11 @@ export interface Dictionary {
 		sinceLabel: string;
 		team: TeamMember[];
 	};
+	faq: {
+		label: string;
+		title: string;
+		items: FaqItem[];
+	};
 	ctaBand: { title: string; cta: string };
 	contact: {
 		label: string;
@@ -84,13 +109,13 @@ export interface Dictionary {
 		blurb: string;
 		email: string;
 		phone: string;
-		address: string;
 		socials: string[];
 		infoLabels: { email: string; phone: string; address: string };
 		form: {
 			firstName: string;
 			lastName: string;
 			email: string;
+			phone: string;
 			projectType: string;
 			projectTypes: string[];
 			selectOne: string;

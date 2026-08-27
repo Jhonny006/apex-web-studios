@@ -1,3 +1,4 @@
+
 import type { Dictionary } from "./index";
 
 export const es: Dictionary = {
@@ -9,15 +10,17 @@ export const es: Dictionary = {
 		links: [
 			{ label: "Proyectos", href: "#work" },
 			{ label: "Servicios", href: "#services" },
+			{ label: "Precios", href: "#pricing" },
 			{ label: "Proceso", href: "#process" },
 			{ label: "Estudio", href: "#studio" },
+			{ label: "Preguntas Frecuentes", href: "#faq" },
 			{ label: "Contacto", href: "#contact" },
 		],
 		cta: "Iniciar Proyecto",
 	},
 	hero: {
 		tag: "Estudio Web Premier",
-		est: "Est. 2026",
+		est: "Est. 2025",
 		location: "Nashville, TN",
 		lines: ["Creamos", "Sitios Web", "que atraen más clientes a tu negocio."],
 		paragraph: "Apex Web Studios diseña, desarrolla y optimiza productos digitales premium y estrategias de marketing basadas en datos para marcas en crecimiento. Sin atajos. Cada sistema construido desde cero.",
@@ -34,10 +37,10 @@ export const es: Dictionary = {
 		"Estrategia de Crecimiento",
 	],
 	stats: [
-		{ value: "7+", label: "Sistemas Entregados" },
-		{ value: "98%", label: "Retención de Clientes" },
-		{ value: "Est. 2026", label: "Lanzamiento del Estudio" },
-		{ value: "3+", label: "Expertos Clave" },
+		{ value: "5+", label: "Sistemas Entregados" },
+		{ value: "100%", label: "Comunicación Directa" },
+		{ value: "Est. 2025", label: "Lanzamiento del Estudio" },
+		{ value: "2+", label: "Expertos Clave" },
 	],
 	portfolio: {
 		label: "Trabajo Seleccionado",
@@ -47,21 +50,6 @@ export const es: Dictionary = {
 			{
 				name: "Ecosistema Integrado de Inventario y Facturación",
 				category: "Arquitectura Backend / Java & Spring Boot",
-				year: "2026"
-			},
-			{
-				name: "Páginas de Aterrizaje Optimizadas para Conversión (CRO)",
-				category: "Desarrollo Frontend / Astro & Tailwind",
-				year: "2026"
-			},
-			{
-				name: "Plataforma de Reserva de Vehículos Bajo Demanda",
-				category: "Desarrollo de Producto / Concepto de Sistema",
-				year: "2026"
-			},
-			{
-				name: "Generador de Clientes Potenciales para Contratistas",
-				category: "SEO Local y Posicionamiento de Marca / En Progreso",
 				year: "2026"
 			},
 		],
@@ -89,6 +77,50 @@ export const es: Dictionary = {
 				title: "Optimización en Google y Velocidad",
 				description: "Construimos sitios web que cargan al instante y están completamente preparados para aparecer más arriba en los motores de búsqueda. Esto hace que sea mucho más fácil para los clientes locales encontrar tu negocio primero.",
 				tags: ["Posicionamiento Google (SEO)", "Carga Ultra-Rápida", "Actualizaciones de Rendimiento"],
+			},
+		],
+	},
+	pricing: {
+		label: "Inversión",
+		title: "Precios",
+		intro: "Precios de partida transparentes. Cada proyecto se cotiza individualmente — estos son puntos de partida, no cotizaciones finales.",
+		packages: [
+			{
+				name: "Landing Page",
+				price: "Desde $750",
+				description: "Una sola página de alta conversión diseñada para convertir visitantes en clientes potenciales o compradores.",
+				features: [
+					"Diseño personalizado y apoyo en redacción",
+					"Optimizado para celular",
+					"Formulario de contacto con integración de correo",
+					"Configuración de analíticas",
+				],
+				cta: "Empezar",
+			},
+			{
+				name: "Sitio Web de Negocio",
+				price: "Desde $1,500",
+				description: "Un sitio completo de varias páginas para negocios que necesitan más que una sola landing page.",
+				features: [
+					"Hasta 5 páginas",
+					"Fundamentos de SEO",
+					"Sistema de diseño personalizado",
+					"Configuración de analíticas y seguimiento",
+				],
+				cta: "Empezar",
+				featured: true,
+			},
+			{
+				name: "Software a la Medida",
+				price: "Cotización Personalizada",
+				description: "Herramientas de negocio a la medida — sistemas de facturación, control de inventario, paneles internos.",
+				features: [
+					"Arquitectura backend personalizada",
+					"Diseño de base de datos segura",
+					"Integraciones de pago",
+					"Soporte continuo disponible",
+				],
+				cta: "Agendar Llamada",
 			},
 		],
 	},
@@ -121,9 +153,9 @@ export const es: Dictionary = {
 	studio: {
 		label: "El Equipo",
 		title: "Estudio",
-		intro: "Somos un equipo de élite especializado en diseñadores, ingenieros y estrategistas de crecimiento que operan desde Nashville, TN. Altamente enfocados y minuciosamente selectivos, aceptamos un número limitado de proyectos por trimestre para garantizar una ingeniería profundamente personalizada y una velocidad de ejecución inigualable.",
+		intro: "Somos un equipo pequeño y enfocado de ingenieros y estrategas de crecimiento que operamos desde Nashville, TN. Trabajamos con un número limitado de proyectos a la vez para que cada cliente reciba atención directa y personalizada desde el inicio hasta el lanzamiento.",
 		location: "Nashville, TN",
-		est: "Est. 2026",
+		est: "Est. 2025",
 		photoAlt: "Espacio de trabajo de desarrollo de software de Apex Web Studios en Nashville, TN",
 		sinceLabel: "Desde",
 		team: [
@@ -137,10 +169,31 @@ export const es: Dictionary = {
 				role: "Desarrollador Frontend Líder",
 				since: "2026"
 			},
+		],
+	},
+	faq: {
+		label: "Preguntas",
+		title: "Preguntas Frecuentes",
+		items: [
 			{
-				name: "James Ink",
-				role: "Director de Estrategia Digital y Marketing",
-				since: "2026"
+				question: "¿Cuánto tiempo toma un proyecto normalmente?",
+				answer: "Una landing page toma entre 1 y 2 semanas. Sitios completos o software a la medida toman entre 3 y 6 semanas dependiendo del alcance. Te daremos un tiempo estimado claro antes de empezar.",
+			},
+			{
+				question: "¿Trabajan con negocios pequeños o que apenas empiezan?",
+				answer: "Sí. Trabajamos con negocios de todos los tamaños, incluyendo startups y emprendedores independientes. Si apenas estás comenzando, te ayudamos a definir qué es lo que realmente necesitas.",
+			},
+			{
+				question: "¿Qué pasa después de que mi sitio se lanza?",
+				answer: "Seguimos involucrados después del lanzamiento — corrigiendo errores, haciendo pequeños ajustes y ayudándote a medir el rendimiento del sitio. Hay planes de soporte continuo disponibles si quieres que manejemos las actualizaciones a largo plazo.",
+			},
+			{
+				question: "¿Pueden ayudarme con marketing también, no solo con el sitio web?",
+				answer: "Sí. Además del diseño y desarrollo, configuramos analíticas, automatización de correo y campañas para ayudar a convertir visitantes en clientes que compran.",
+			},
+			{
+				question: "¿Qué tanto tengo que involucrarme?",
+				answer: "Tanto como quieras. La mayoría de los clientes participan en una llamada inicial, revisan los diseños en puntos clave y aprueban la versión final — nosotros nos encargamos del resto.",
 			},
 		],
 	},
@@ -154,7 +207,7 @@ export const es: Dictionary = {
 		blurb: "Abrimos nuestra agenda para nuevos proyectos corporativos cada trimestre. Describe los parámetros de tu proyecto a continuación y nuestro equipo de ingeniería se comunicará contigo en menos de 48 horas para programar una llamada de descubrimiento.",
 		email: "apexwebstudioscontact@gmail.com",
 		phone: "+1 (615) 647-0123",
-		socials: ["LinkedIn", "GitHub", "Twitter", "Instagram"],
+		socials: ["Instagram"],
 		infoLabels: { email: "Correo", phone: "Teléfono", address: "Ubicación" },
 		form: {
 			firstName: "Nombre",

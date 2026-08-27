@@ -1,0 +1,43 @@
+---
+import { getDict } from "../i18n";
+import SectionHeading from "./ui/SectionHeading.astro";
+
+const t = getDict(Astro.currentLocale);
+---
+
+<section id="faq" class="scroll-mt-24 border-b border-line">
+    <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28" data-reveal>
+        <SectionHeading label={t.faq.label} title={t.faq.title} />
+
+        <div class="mt-14 divide-y divide-line border-t border-line">
+            {
+                t.faq.items.map((item, i) => (
+                    <details class="group py-6">
+                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+                            <span class="flex items-baseline gap-4">
+                                <span class="font-mono text-xs text-ink-muted">
+                                    {String(i + 1).padStart(2, "0")}
+                                </span>
+                                <span class="font-headline text-base font-bold uppercase transition-colors group-open:text-accent sm:text-lg">
+                                    {item.question}
+                                </span>
+                            </span>
+                            <svg
+                                class="h-4 w-4 flex-shrink-0 text-ink-muted transition-transform group-open:rotate-45 group-open:text-accent"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                            >
+                                <path d="M12 5v14M5 12h14" />
+                            </svg>
+                        </summary>
+                        <p class="mt-4 max-w-2xl pl-0 text-sm leading-relaxed text-ink-muted sm:pl-9">
+                            {item.answer}
+                        </p>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>
